@@ -5,3 +5,6 @@ logo_preview.jpg
 extracted_assets/
 .vercel
 .DS_Store
+
+.vercel
+.env*
