@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mİ-PA PASTA | Haute Pâtisserie &amp; Özel Üretim Koleksiyonu 2027</title>
+  <meta name="description" content="Mİ-PA PASTA — Özel üretim baton pastalar, 3 katlı pastalar, donuk pastalar, el yapımı mayalılar, lezzet topları ve butik kurabiye çeşitleri. Lüks ve sanatsal pastacılık deneyimi." />
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/images/logo-light.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Custom Luxury Magnetic Cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+    <span class="cursor-label" id="cursorLabel"></span>
+  </div>
+
+  <!-- Ambient Gold Dust & Candlelight Canvas -->
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Luxury Preloader Curtain -->
+  <div class="preloader" id="preloader" role="status" aria-label="Yükleniyor">
+    <div class="preloader-inner">
+      <div class="preloader-halo"></div>
+      <img src="assets/images/logo-light.png" alt="Mİ-PA PASTA Logo" class="preloader-logo" />
+      <p class="preloader-kicker">HAUTE PÂTISSERIE &amp; ARTISAN ATELIER • 2027</p>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-meta">
+        <span id="preloaderStatus">ATÖLYE SAHNESİ HAZIRLANIYOR</span>
+        <span id="preloaderPercent">100%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Glassmorphic Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <nav class="nav-left" aria-label="Ana Menü Sol">
+        <a href="#imza-seriler" class="nav-link" data-cursor="SERİLER">6 İmza Seri</a>
+        <a href="#koleksiyon" class="nav-link" data-cursor="VİTRİN">Koleksiyon <span class="nav-count">19</span></a>
+        <a href="#anatomi" class="nav-link" data-cursor="KATMANLAR">Lezzet Anatomisi</a>
+        <a href="#tadim-kutusu" class="nav-link" data-cursor="TASARLA">Tadım Kutusu</a>
+      </nav>
+
+      <a href="#hero" class="brand-logo-wrap" aria-label="Mİ-PA PASTA Ana Sayfa" data-cursor="BAŞA DÖN">
+        <img src="assets/images/logo-light.png" alt="Mİ-PA PASTA" class="brand-logo logo-for-dark" />
+        <img src="assets/images/logo-dark.png" alt="Mİ-PA PASTA" class="brand-logo logo-for-light" />
+      </a>
+
+      <div class="nav-right">
+        <a href="#lookbook" class="nav-link hide-tablet" data-cursor="GALERİ">Mum Işığı Galerisi <span class="nav-count">58</span></a>
+        <button type="button" class="lighting-toggle" id="themeToggleBtn" aria-label="Atmosfer Işığını Değiştir" title="Mum Işığı / Krem Atölye Modu">
+          <span class="lighting-icon" id="lightingIcon">✦</span>
+          <span class="lighting-text" id="lightingText">Mum Işığı</span>
+        </button>
+        <a href="assets/MIPA-2027-Katalog.pdf" target="_blank" rel="noopener" class="btn-catalog-pill hide-mobile" data-cursor="PDF AÇ">
+          <span>2027 Katalog</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+        <button type="button" class="btn-tasting-bag" id="openDrawerBtn" aria-label="Tadım ve Sipariş Seçkisi">
+          <span class="bag-label">Seçkim</span>
+          <span class="bag-count" id="drawerCountBadge">0</span>
+        </button>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü Aç">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-links">
+        <a href="#imza-seriler" class="mobile-nav-link">01 — 6 İmza Seri</a>
+        <a href="#koleksiyon" class="mobile-nav-link">02 — 2027 Koleksiyon Vitrini (19 Ürün)</a>
+        <a href="#anatomi" class="mobile-nav-link">03 — Bir Dilimin Anatomisi</a>
+        <a href="#tadim-kutusu" class="mobile-nav-link">04 — İnteraktif Tadım Tabağı Oluşturucu</a>
+        <a href="#lookbook" class="mobile-nav-link">05 — Mum Işığında Mİ-PA Galerisi (58 Kare)</a>
+        <a href="#iletisim" class="mobile-nav-link">06 — Kurumsal &amp; Butik Sipariş</a>
+        <a href="assets/MIPA-2027-Katalog.pdf" target="_blank" class="mobile-nav-link gold-highlight">✦ 2027 Resmi PDF Kataloğu İndir</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="smoothWrapper">
+    <!-- =====================================================================
+         SECTION 1: INTERACTIVE MULTI-PLANE PARALLAX HERO STAGE
+         ===================================================================== -->
+    <section class="hero-section" id="hero">
+      <!-- Background Parallax Ambient Aura -->
+      <div class="hero-ambient-glow" id="heroAmbientGlow"></div>
+      <div class="hero-fluted-overlay" aria-hidden="true"></div>
+
+      <div class="hero-container">
+        <!-- Left Column: Haute Pâtisserie Editorial Typography -->
+        <div class="hero-copy" data-parallax-speed="-0.08">
+          <div class="eyebrow-badge">
+            <span class="eyebrow-dot"></span>
+            <span>Mİ-PA PASTA ATELIER • 2027 ÖZEL KOLEKSİYONU</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="title-line">Her Katmanda</span>
+            <span class="title-line italic-gold">Zarafet,</span>
+            <span class="title-line">Her Dilimde Sanat.</span>
+          </h1>
+
+          <p class="hero-lead">
+            Kadifemsi <strong>Mor Velvet</strong> baton pastalardan üç katlı karamel-çikolata senfonisine, el açması mayalı lezzetlerden trüf dokulu lezzet toplarına uzanan; mum ışığı zarafetinde tasarlanmış özel üretim pastacılık koleksiyonu.
+          </p>
+
+          <!-- Hero Scene Switcher (Interactive Stage Controller) -->
+          <div class="hero-scene-selector" role="tablist" aria-label="Vitrin Sahnesi Seçimi">
+            <span class="scene-selector-label">SAHNE SEÇİMİ:</span>
+            <div class="scene-pills">
+              <button type="button" class="scene-pill active" data-scene="0" role="tab" aria-selected="true">
+                <span class="scene-num">01</span> Mor Velvet Baton
+              </button>
+              <button type="button" class="scene-pill" data-scene="1" role="tab" aria-selected="false">
+                <span class="scene-num">02</span> 3 Katlı Baton
+              </button>
+              <button type="button" class="scene-pill" data-scene="2" role="tab" aria-selected="false">
+                <span class="scene-num">03</span> Red Velvet Donuk
+              </button>
+              <button type="button" class="scene-pill" data-scene="3" role="tab" aria-selected="false">
+                <span class="scene-num">04</span> Lezzet Topları &amp; Kurabiye
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-cta-row">
+            <a href="#koleksiyon" class="btn-primary-gold" data-cursor="KEŞFET">
+              <span>Koleksiyonu Keşfet</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#tadim-kutusu" class="btn-ghost-luxury" data-cursor="TADIM">
+              <span>Tadım Tabağını Tasarla</span>
+            </a>
+          </div>
+
+          <!-- Key Patisserie Telemetry -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-value">6</span>
+              <span class="metric-label">Özel Üretim İmza Seri</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-value">19</span>
+              <span class="metric-label">Artisan Reçete &amp; Çeşit</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-value">%100</span>
+              <span class="metric-label">El İşçiliği &amp; Seçkin Hammadde</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Multi-Plane 3D Interactive Parallax Stage -->
+        <div class="hero-stage-wrap" id="heroStageWrap">
+          <!-- Rotating Gold Seal SVG -->
+          <div class="hero-rotating-seal" data-mouse-depth="0.04" aria-hidden="true">
+            <svg viewBox="0 0 200 200" width="150" height="150">
+              <defs>
+                <path id="sealCircle" d="M 100, 100 m -74, 0 a 74,74 0 1,1 148,0 a 74,74 0 1,1 -148,0" />
+              </defs>
+              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(212,175,55,0.35)" stroke-width="1" stroke-dasharray="3 3" />
+              <circle cx="100" cy="100" r="56" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="1" />
+              <text fill="#E6C674" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" letter-spacing="3.6" font-weight="600">
+                <textPath href="#sealCircle">Mİ-PA PASTA • ÖZEL ÜRETİM • 2027 KOLEKSİYONU •</textPath>
+              </text>
+              <text x="100" y="105" text-anchor="middle" fill="#E6C674" font-family="'Cormorant Garamond', serif" font-size="22" font-style="italic">2027</text>
+            </svg>
+          </div>
+
+          <!-- Plane 1 (Deep Background Floating Card - Top Left) -->
+          <div class="parallax-card stage-card-back" data-mouse-depth="-0.035" data-parallax-speed="0.12">
+            <div class="stage-card-img-wrap">
+              <img src="assets/images/img-26.jpg" alt="Mum ışığında Mİ-PA sunumu" id="heroBackImg" />
+            </div>
+            <div class="stage-card-caption">
+              <span class="mono-tag">ATÖLYE ATMOSFERİ</span>
+              <strong id="heroBackTitle">Mum Işığı &amp; Altın Supla Sunumu</strong>
+            </div>
+          </div>
+
+          <!-- Plane 2 (Main Hero Centerpiece Frame) -->
+          <div class="parallax-card stage-card-main" id="heroMainCard" data-mouse-depth="0.02" data-cursor="DETAY">
+            <div class="main-card-Arch">
+              <img src="assets/images/studio-baton-mor-velvet-banner.jpg" alt="Mİ-PA Özel Üretim Mor Velvet Baton Pasta" id="heroMainImg" />
+              <div class="main-card-vignette"></div>
+              <div class="main-card-badge">
+                <span class="mono-code" id="heroMainCode">SERİ 01 • MP-2027</span>
+                <span class="badge-pill" id="heroMainTag">ÖZEL ÜRETİM BATON</span>
+              </div>
+              <div class="main-card-overlay-info">
+                <div>
+                  <h2 id="heroMainTitle">Mor Velvet Baton Pasta</h2>
+                  <p id="heroMainDesc">İpeksi beyaz krema katmanları arasında kadifemsi mor kek dokusu ve mermer tepsi sunumu.</p>
+                </div>
+                <button type="button" class="btn-circle-inspect" id="heroInspectBtn" aria-label="Ürünü İncele">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plane 3 (Foreground Floating Slice Detail - Bottom Left) -->
+          <div class="parallax-card stage-card-front-left" data-mouse-depth="0.055" data-parallax-speed="-0.14">
+            <img src="assets/images/img-29.jpg" alt="Dilim Detayı" id="heroSliceImg" />
+            <div class="mini-floating-meta">
+              <span class="mono-tag">DİLİM KESİTİ</span>
+              <strong id="heroSliceTitle">Çift Katmanlı Krema</strong>
+            </div>
+          </div>
+
+          <!-- Plane 4 (Foreground Floating Secondary Detail - Bottom Right) -->
+          <div class="parallax-card stage-card-front-right" data-mouse-depth="0.065" data-parallax-speed="-0.18">
+            <img src="assets/images/studio-baton-karamel.jpg" alt="Karamel Baton Dilimi" id="heroSecondaryImg" />
+            <div class="mini-floating-meta">
+              <span class="mono-tag" id="heroSecondaryCode">KARAMEL &amp; ÇİKOLATA</span>
+              <strong id="heroSecondaryTitle">Parlak Glazür Dokusu</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#imza-seriler" class="scroll-cue" aria-label="Aşağı Kaydır">
+        <span class="scroll-cue-text">KEŞFETMEK İÇİN KAYDIRIN</span>
+        <span class="scroll-cue-line"></span>
+      </a>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: KINETIC LUXURY MARQUEE RIBBON
+         ===================================================================== -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>ÖZEL ÜRETİM BATON PASTALAR</span><span class="marquee-gem">✦</span>
+          <span>3 KATLI BATON PASTALAR</span><span class="marquee-gem">✦</span>
+          <span>ÖZEL ÜRETİM DONUK PASTALAR</span><span class="marquee-gem">✦</span>
+          <span>EL YAPIMI MAYALI SEÇKİSİ</span><span class="marquee-gem">✦</span>
+          <span>TRÜF DOKULU LEZZET TOPLARI</span><span class="marquee-gem">✦</span>
+          <span>BUTİK KURABİYE ÇEŞİTLERİ</span><span class="marquee-gem">✦</span>
+          <span>Mİ-PA PASTA 2027 KOLEKSİYONU</span><span class="marquee-gem">✦</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>ÖZEL ÜRETİM BATON PASTALAR</span><span class="marquee-gem">✦</span>
+          <span>3 KATLI BATON PASTALAR</span><span class="marquee-gem">✦</span>
+          <span>ÖZEL ÜRETİM DONUK PASTALAR</span><span class="marquee-gem">✦</span>
+          <span>EL YAPIMI MAYALI SEÇKİSİ</span><span class="marquee-gem">✦</span>
+          <span>TRÜF DOKULU LEZZET TOPLARI</span><span class="marquee-gem">✦</span>
+          <span>BUTİK KURABİYE ÇEŞİTLERİ</span><span class="marquee-gem">✦</span>
+          <span>Mİ-PA PASTA 2027 KOLEKSİYONU</span><span class="marquee-gem">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         SECTION 3: 6 SIGNATURE SERIES (PARALLAX EDITORIAL SHOWCASE)
+         ===================================================================== -->
+    <section class="series-section" id="imza-seriler">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Mİ-PA 2027 KATALOG SEÇKİSİ</span>
+            <span class="kicker-line"></span>
+          </div>
+          <h2 class="section-title">Altı İmza Koleksiyon, <span class="italic-gold">Kusursuz Standart.</span></h2>
+          <p class="section-subtitle">
+            Mİ-PA Pasta’nın 2027 koleksiyonunda yer alan altı ana üretim disiplini; görsel ihtişamı, porsiyon standardını ve yüksek pastacılık tekniğini tek bir çatı altında buluşturur.
+          </p>
+        </div>
+
+        <!-- Interactive 6 Series Accordion / Parallax Cards Grid -->
+        <div class="series-showcase-grid" id="seriesShowcaseGrid">
+          <!-- Populated dynamically & richly via app.js or static semantic cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: COMPLETE INTERACTIVE VITRIN (ALL 19 CATALOG PRODUCTS)
+         ===================================================================== -->
+    <section class="collection-section" id="koleksiyon">
+      <div class="section-container">
+        <div class="collection-top-bar reveal-up">
+          <div class="collection-heading-block">
+            <span class="mono-kicker">02 / TÜM REÇETELER &amp; VİTRİN</span>
+            <h2 class="section-title">Özel Üretim <span class="italic-gold">Lezzet Vitrini</span></h2>
+          </div>
+
+          <!-- View Mode Toggle: Studio vs Candlelight Table Shoot -->
+          <div class="ambience-view-switch" role="group" aria-label="Fotoğraf Sahnesi Görünümü">
+            <span class="switch-caption">GÖRSEL SAHNE:</span>
+            <button type="button" class="view-mode-btn active" id="viewModeCandle" data-view="candle">
+              <span class="dot-indicator"></span> Mum Işığı Sofrası
+            </button>
+            <button type="button" class="view-mode-btn" id="viewModeStudio" data-view="studio">
+              <span class="dot-indicator"></span> Katalog Stüdyo
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter Bar -->
+        <div class="filter-bar reveal-up" role="tablist" aria-label="Kategori Filtresi">
+          <button type="button" class="filter-pill active" data-category="all">
+            <span>Tümü</span><small>19</small>
+          </button>
+          <button type="button" class="filter-pill" data-category="baton">
+            <span>Özel Üretim Baton</span><small>3</small>
+          </button>
+          <button type="button" class="filter-pill" data-category="baton-3kat">
+            <span>3 Katlı Baton</span><small>3</small>
+          </button>
+          <button type="button" class="filter-pill" data-category="donuk">
+            <span>Donuk Pastalar</span><small>3</small>
+          </button>
+          <button type="button" class="filter-pill" data-category="mayali">
+            <span>Özel Üretim Mayalı</span><small>3</small>
+          </button>
+          <button type="button" class="filter-pill" data-category="toplar">
+            <span>Lezzet Topları</span><small>3</small>
+          </button>
+          <button type="button" class="filter-pill" data-category="kurabiye">
+            <span>Kurabiye &amp; Tadım</span><small>4</small>
+          </button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Rendered by app.js with 3D tilt, dual-image hover, and full modal triggers -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: INTERACTIVE LAYER ANATOMY & CRAFT DISSECTOR
+         ===================================================================== -->
+    <section class="anatomy-section" id="anatomi">
+      <div class="anatomy-parallax-bg" data-parallax-speed="0.15"></div>
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>03 / MİMARİ PASTACILIK &amp; DOKU ANALİZİ</span>
+            <span class="kicker-line"></span>
+          </div>
+          <h2 class="section-title">Bir Dilimin <span class="italic-gold">Anatomisi</span></h2>
+          <p class="section-subtitle">
+            Her Mİ-PA pastası, milimetrik katman dengesiyle inşa edilir. İncelemek istediğiniz imza reçeteyi seçin ve katmanları interaktif olarak ayrıştırın.
+          </p>
+        </div>
+
+        <!-- Anatomy Specimen Selector -->
+        <div class="anatomy-tabs reveal-up" id="anatomyTabs">
+          <button type="button" class="anatomy-tab active" data-specimen="mor-velvet">Mor Velvet Baton</button>
+          <button type="button" class="anatomy-tab" data-specimen="karamel-3kat">3 Katlı Karamel Baton</button>
+          <button type="button" class="anatomy-tab" data-specimen="red-velvet-donuk">Red Velvet Donuk Pasta</button>
+          <button type="button" class="anatomy-tab" data-specimen="cikolata-kare">Kare Kesim Çikolata</button>
+        </div>
+
+        <div class="anatomy-workbench reveal-up">
+          <!-- Left: Interactive Visual Stage with Exploding Hotspots -->
+          <div class="anatomy-visual-stage" id="anatomyVisualStage">
+            <div class="anatomy-frame">
+              <img src="assets/images/img-29.jpg" alt="Mor Velvet Katman Analizi" id="anatomyMainImg" />
+              <!-- Interactive Layer Hotspots -->
+              <button type="button" class="hotspot-pin active" style="top: 24%; left: 52%;" data-layer="0" aria-label="1. Katman">
+                <span class="pin-pulse"></span><span class="pin-num">01</span>
+              </button>
+              <button type="button" class="hotspot-pin" style="top: 46%; left: 38%;" data-layer="1" aria-label="2. Katman">
+                <span class="pin-pulse"></span><span class="pin-num">02</span>
+              </button>
+              <button type="button" class="hotspot-pin" style="top: 62%; left: 58%;" data-layer="2" aria-label="3. Katman">
+                <span class="pin-pulse"></span><span class="pin-num">03</span>
+              </button>
+              <button type="button" class="hotspot-pin" style="top: 78%; left: 45%;" data-layer="3" aria-label="4. Katman">
+                <span class="pin-pulse"></span><span class="pin-num">04</span>
+              </button>
+            </div>
+
+            <!-- Secondary Macro Comparison Thumbnail -->
+            <div class="anatomy-macro-card">
+              <img src="assets/images/studio-baton-mor-velvet-banner.jpg" alt="Bütün Form" id="anatomyWholeImg" />
+              <div class="macro-card-text">
+                <span class="mono-tag">BÜTÜN TEPSİ &amp; BATON FORMU</span>
+                <strong id="anatomyWholeLabel">Standart Porsiyon Kesim Disiplini</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Layer Stack Breakdown -->
+          <div class="anatomy-details-panel">
+            <div class="anatomy-specimen-header">
+              <span class="mono-code" id="anatomyCode">SPECIMEN // MP-BV-02</span>
+              <h3 id="anatomyTitle">Mor Velvet Özel Baton</h3>
+              <p id="anatomySummary">Kadife dokulu mor pandispanya katmanları ve hafifletilmiş beyaz pastacı kremasının mermer üzerinde dengeli uyumu.</p>
+            </div>
+
+            <!-- Layer Cards Stack -->
+            <div class="layer-stack" id="anatomyLayerStack">
+              <!-- Populated by app.js -->
+            </div>
+
+            <!-- Technical Specs Footer -->
+            <div class="anatomy-tech-specs" id="anatomyTechSpecs">
+              <div class="tech-spec-box">
+                <span class="spec-label">SAKLAMA KOŞULU</span>
+                <strong class="spec-val" id="specTemp">+4°C / -18°C Şok</strong>
+              </div>
+              <div class="tech-spec-box">
+                <span class="spec-label">SUNUM FORMU</span>
+                <strong class="spec-val" id="specForm">Baton &amp; Üçgen Dilim</strong>
+              </div>
+              <div class="tech-spec-box">
+                <span class="spec-label">DOKU PROFİLİ</span>
+                <strong class="spec-val" id="specTexture">Kadife &amp; İpeksi</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 6: BESPOKE TASTING PLATE & BOX CONFIGURATOR (DEGÜSTASYON)
+         ===================================================================== -->
+    <section class="configurator-section" id="tadim-kutusu">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>04 / İNTERAKTİF DEGÜSTASYON ATÖLYESİ</span>
+            <span class="kicker-line"></span>
+          </div>
+          <h2 class="section-title">Kendi <span class="italic-gold">Tadım Tabağınızı</span> Tasarlayın</h2>
+          <p class="section-subtitle">
+            Davetleriniz, özel misafirleriniz veya işletmenizin menü tadımı için altın suplalı Mİ-PA tadım tabağınızı oluşturun. Seçtiğiniz her lezzet tabağınıza anında yerleşir.
+          </p>
+        </div>
+
+        <div class="configurator-layout reveal-up">
+          <!-- Left: Visual Porcelain & Gold Charger Plate Stage -->
+          <div class="plate-stage-column">
+            <div class="plate-visual-wrapper">
+              <!-- Reference Photo Preview Toggle -->
+              <div class="plate-Real-badge">
+                <img src="assets/images/img-09.jpg" alt="Gerçek Mİ-PA Tadım Tabağı" />
+                <div>
+                  <span class="mono-tag">ATÖLYE GERÇEK SUNUMU</span>
+                  <strong>Mİ-PA Degüstasyon Tabağı</strong>
+                </div>
+              </div>
+
+              <!-- Interactive Gold-Rimmed Charger Plate -->
+              <div class="luxury-charger-plate" id="luxuryChargerPlate">
+                <div class="charger-fluted-rim"></div>
+                <div class="porcelain-inner-plate">
+                  <div class="porcelain-gold-ring"></div>
+                  <!-- 6 Radial Slots on the Plate -->
+                  <div class="plate-slots-grid" id="plateSlotsGrid">
+                    <!-- Rendered dynamically by app.js -->
+                  </div>
+                  <div class="plate-center-monogram">
+                    <span>Mİ-PA</span>
+                    <small id="plateSlotCounter">0 / 6 SEÇİLDİ</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flavor Harmony Meter -->
+              <div class="flavor-harmony-card">
+                <div class="harmony-header">
+                  <span class="mono-tag">LEZZET DENGESİ ANALİZİ</span>
+                  <span id="harmonyStatusText">Dengeli Seçki</span>
+                </div>
+                <div class="harmony-bars">
+                  <div class="harmony-bar-item">
+                    <span>Pasta &amp; Krema</span>
+                    <div class="h-bar-track"><div class="h-bar-fill" id="barCake" style="width: 0%"></div></div>
+                  </div>
+                  <div class="harmony-bar-item">
+                    <span>Trüf &amp; Çikolata</span>
+                    <div class="h-bar-track"><div class="h-bar-fill" id="barChoco" style="width: 0%"></div></div>
+                  </div>
+                  <div class="harmony-bar-item">
+                    <span>Mayalı &amp; Kurabiye</span>
+                    <div class="h-bar-track"><div class="h-bar-fill" id="barPastry" style="width: 0%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Selection Controls & Preset Curations -->
+          <div class="configurator-controls-column">
+            <div class="preset-curations">
+              <span class="mono-tag">ŞEFİN HAZIR SEÇKİLERİ (TEK TIKLA DOLDUR):</span>
+              <div class="preset-buttons">
+                <button type="button" class="preset-btn" data-preset="chef-mix">✦ İmza Karma Tadım Tabağı</button>
+                <button type="button" class="preset-btn" data-preset="velvet-choco">✦ Velvet &amp; Çikolata Tutkusu</button>
+                <button type="button" class="preset-btn" data-preset="tea-hour">✦ Beş Çayı &amp; Mayalı Seçkisi</button>
+                <button type="button" class="preset-btn" id="clearPlateBtn">Tabağı Temizle</button>
+              </div>
+            </div>
+
+            <div class="picker-title-row">
+              <h3>Tabağa Eklenecek Lezzetleri Seçin</h3>
+              <span class="mono-tag">6 ADET SEÇİM YAPABİLİRSİNİZ</span>
+            </div>
+
+            <div class="picker-items-grid" id="pickerItemsGrid">
+              <!-- Populated by app.js -->
+            </div>
+
+            <div class="configurator-action-bar">
+              <div class="config-summary-text">
+                <span class="mono-tag">TASARLANAN SEÇKİ</span>
+                <strong id="configSummaryTitle">6'lı Özel Degüstasyon Tabağı</strong>
+              </div>
+              <button type="button" class="btn-primary-gold" id="addCustomPlateToBagBtn">
+                <span>Seçkime Ekle &amp; Sipariş Oluştur</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 7: MUM IŞIĞINDA Mİ-PA — ATELIER LOOKBOOK (ALL 58 PHOTOS)
+         ===================================================================== -->
+    <section class="lookbook-section" id="lookbook">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>05 / ATÖLYE ÇEKİMLERİ &amp; GÖRSEL ARŞİV</span>
+            <span class="kicker-line"></span>
+          </div>
+          <h2 class="section-title">Mum Işığında <span class="italic-gold">Mİ-PA Sahnesi</span></h2>
+          <p class="section-subtitle">
+            Beyaz laleler, kristal kadehler, altın suplalar ve mum ışığı eşliğinde gerçekleştirilen özel Mİ-PA Pasta fotoğraf çekiminin tamamını keşfedin. Tam ekran incelemek için herhangi bir kareye tıklayın.
+          </p>
+        </div>
+
+        <!-- Lookbook Filter Tabs -->
+        <div class="lookbook-filters reveal-up">
+          <button type="button" class="lookbook-filter-btn active" data-gal="curated">Seçkin Vitrin Kareleri (16)</button>
+          <button type="button" class="lookbook-filter-btn" data-gal="table">Mum Işığı &amp; Lale Sofrası</button>
+          <button type="button" class="lookbook-filter-btn" data-gal="macro">Dilim &amp; Doku Yakın Plan</button>
+          <button type="button" class="lookbook-filter-btn" data-gal="boxes">Baton &amp; Kutu Sunumları</button>
+          <button type="button" class="lookbook-filter-btn" data-gal="all">Tüm Arşiv (58 Fotoğraf)</button>
+        </div>
+
+        <!-- Masonry Parallax Lookbook Grid -->
+        <div class="lookbook-masonry" id="lookbookMasonry">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 8: HORECA / KURUMSAL İŞ ORTAKLIĞI & KATALOG İNDİRME
+         ===================================================================== -->
+    <section class="atelier-contact-section" id="iletisim">
+      <div class="section-container">
+        <div class="contact-luxury-card reveal-up">
+          <div class="contact-card-left">
+            <span class="mono-kicker">06 / KURUMSAL TEDARİK &amp; ÖZEL SİPARİŞ</span>
+            <h2 class="contact-title">Seçkin Mekanlar ve Özel Davetler İçin <span class="italic-gold">Üretim Gücü.</span></h2>
+            <p class="contact-desc">
+              Mİ-PA Pasta; lüks kafeler, oteller, restoranlar ve butik davetler için standart porsiyon kalitesinde <strong>Özel Üretim Baton Pastalar</strong>, <strong>Donuk Kutu Pastalar</strong>, <strong>Mayalılar</strong> ve <strong>Butik Kurabiyeler</strong> üretmektedir.
+            </p>
+
+            <div class="b2b-pillars">
+              <div class="b2b-pillar">
+                <span class="pillar-num">01</span>
+                <div>
+                  <h4>Soğuk Zincir &amp; Donuk Pasta Teknolojisi</h4>
+                  <p>İlk günkü tazeliğini, nemini ve kadife dokusunu koruyan önceden dilimlenmiş kutu pastalar.</p>
+                </div>
+              </div>
+              <div class="b2b-pillar">
+                <span class="pillar-num">02</span>
+                <div>
+                  <h4>Kusursuz Porsiyon &amp; Maliyet Standardı</h4>
+                  <p>Her dilimde aynı gramaj, aynı katman yüksekliği ve vitrinlerde üst düzey görsel cazibe.</p>
+                </div>
+              </div>
+              <div class="b2b-pillar">
+                <span class="pillar-num">03</span>
+                <div>
+                  <h4>2027 Resmi Ürün Kataloğu</h4>
+                  <p>Tüm ürün ailesini tek dosyada incelemek için resmi PDF kataloğumuzu indirebilirsiniz.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-download-banner">
+              <img src="assets/images/logo-light.png" alt="Mİ-PA" class="catalog-mini-logo" />
+              <div class="catalog-banner-info">
+                <strong>Mİ-PA PASTA — 2027 Genel Katalog (PDF)</strong>
+                <span>6 Kategori • 19 Özel Üretim Ürün • Yüksek Çözünürlüklü Baskı</span>
+              </div>
+              <a href="assets/MIPA-2027-Katalog.pdf" download="MIPA-2027-Katalog.pdf" class="btn-primary-gold">
+                <span>PDF İndir</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card-right">
+            <form class="luxury-inquiry-form" id="inquiryForm">
+              <h3>Tadım &amp; İş Ortaklığı Talebi</h3>
+              <p>Numune tadım kutusu, toptan fiyat listesi veya özel siparişleriniz için bilgilerinizi bırakın.</p>
+
+              <div class="form-row">
+                <label for="clientName">Adınız Soyadınız / Kurum Adı</label>
+                <input type="text" id="clientName" required placeholder="Örn: L'Atelier Lounge &amp; Cafe" />
+              </div>
+
+              <div class="form-row-two">
+                <div class="form-row">
+                  <label for="clientPhone">Telefon Numaranız</label>
+                  <input type="tel" id="clientPhone" required placeholder="05XX XXX XX XX" />
+                </div>
+                <div class="form-row">
+                  <label for="clientType">Talep Türü</label>
+                  <select id="clientType">
+                    <option value="Kafe / Restoran / Otel Tedarik">Kafe / Restoran / Otel Tedarik</option>
+                    <option value="Özel Davet &amp; Butik Sipariş">Özel Davet &amp; Butik Sipariş</option>
+                    <option value="Numune Tadım Kutusu Talebi">Numune Tadım Kutusu Talebi</option>
+                    <option value="Bayilik &amp; Dağıtım">Bayilik &amp; Dağıtım</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="clientInterest">İlgilendiğiniz Ürün Grupları</label>
+                <input type="text" id="clientInterest" placeholder="Baton Pastalar, Donuk Pastalar, Lezzet Topları..." />
+              </div>
+
+              <div class="form-row">
+                <label for="clientNotes">Notunuz</label>
+                <textarea id="clientNotes" rows="3" placeholder="Sipariş adedi, teslimat bölgesi veya özel talebinizi yazabilirsiniz..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary-gold full-width">
+                <span>Talebi Oluştur &amp; Gönder</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+              <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       LUXURY FOOTER
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <img src="assets/images/logo-light.png" alt="Mİ-PA PASTA" class="footer-logo" />
+          <p>
+            Özel üretim baton pastalar, 3 katlı pastalar, donuk pastalar, mayalılar, lezzet topları ve kurabiye çeşitleriyle zarafetin lezzet hali.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Koleksiyonlar</h4>
+          <ul>
+            <li><a href="#koleksiyon" data-filter-jump="baton">Özel Üretim Baton Pastalar</a></li>
+            <li><a href="#koleksiyon" data-filter-jump="baton-3kat">3 Katlı Baton Pastalar</a></li>
+            <li><a href="#koleksiyon" data-filter-jump="donuk">Özel Üretim Donuk Pastalar</a></li>
+            <li><a href="#koleksiyon" data-filter-jump="mayali">Özel Üretim Mayalılar</a></li>
+            <li><a href="#koleksiyon" data-filter-jump="toplar">Özel Üretim Lezzet Topları</a></li>
+            <li><a href="#koleksiyon" data-filter-jump="kurabiye">Kurabiye Çeşitleri</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Deneyim</h4>
+          <ul>
+            <li><a href="#imza-seriler">6 İmza Seri</a></li>
+            <li><a href="#anatomi">Bir Dilimin Anatomisi</a></li>
+            <li><a href="#tadim-kutusu">Tadım Tabağı Tasarla</a></li>
+            <li><a href="#lookbook">Mum Işığı Galerisi (58 Fotoğraf)</a></li>
+            <li><a href="assets/MIPA-2027-Katalog.pdf" target="_blank">2027 PDF Katalog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2027 Mİ-PA PASTA. Tüm Hakları Saklıdır.</span>
+        <span class="mono-tag">HAUTE PÂTISSERIE • ÖZEL ÜRETİM ATÖLYESİ</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       PRODUCT DETAIL & MULTI-ANGLE GALLERY MODAL
+       ===================================================================== -->
+  <div class="modal-backdrop" id="productModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="product-modal-card">
+      <button type="button" class="modal-close-btn" id="closeProductModal" aria-label="Kapat">&times;</button>
+      <div class="modal-grid">
+        <!-- Left: Main Image + Multi-Angle Thumbnail Strip -->
+        <div class="modal-gallery-col">
+          <div class="modal-main-img-wrap">
+            <img src="assets/images/img-29.jpg" alt="Mİ-PA Pasta" id="modalMainImg" />
+            <span class="modal-series-tag" id="modalSeriesTag"></span>
+          </div>
+          <div class="modal-thumbs-row" id="modalThumbsRow">
+            <!-- Populated dynamically with all shoot angles of this product -->
+          </div>
+        </div>
+
+        <!-- Right: Product Storytelling & Specs -->
+        <div class="modal-info-col">
+          <span class="mono-code" id="modalCode"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-desc" id="modalDesc"></p>
+
+          <div class="modal-specs-grid" id="modalSpecsGrid"></div>
+
+          <div class="modal-tasting-notes">
+            <h4>Lezzet &amp; Sunum Notları</h4>
+            <ul id="modalNotesList"></ul>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-primary-gold" id="modalAddBagBtn">
+              <span>Tadım &amp; Sipariş Seçkime Ekle</span>
+            </button>
+            <button type="button" class="btn-ghost-luxury" id="modalAddPlateBtn">
+              <span>Tadım Tabağına Yerleştir</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       FULLSCREEN LIGHTBOX MODAL FOR 58 PHOTOS
+       ===================================================================== -->
+  <div class="lightbox-backdrop" id="lightboxModal" aria-hidden="true" role="dialog">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Kapat">&times;</button>
+    <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Önceki Fotoğraf">&#10094;</button>
+    <div class="lightbox-stage">
+      <img src="assets/images/img-29.jpg" alt="Mİ-PA Pasta" id="lightboxImg" />
+      <div class="lightbox-caption">
+        <span class="mono-tag" id="lightboxCode"></span>
+        <strong id="lightboxTitle"></strong>
+      </div>
+    </div>
+    <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Sonraki Fotoğraf">&#10095;</button>
+  </div>
+
+  <!-- =====================================================================
+       TASTING & ORDER SELECTION DRAWER (SLIDE-OVER)
+       ===================================================================== -->
+  <div class="drawer-backdrop" id="bagDrawer" aria-hidden="true">
+    <aside class="drawer-panel" aria-label="Tadım ve Sipariş Seçkisi">
+      <div class="drawer-header">
+        <div>
+          <span class="mono-tag">Mİ-PA PASTA ATELIER</span>
+          <h3>Özel Tadım &amp; Sipariş Seçkim</h3>
+        </div>
+        <button type="button" class="drawer-close" id="closeDrawerBtn" aria-label="Kapat">&times;</button>
+      </div>
+
+      <div class="drawer-body" id="drawerItemsList">
+        <!-- Populated by app.js -->
+      </div>
+
+      <div class="drawer-footer">
+        <div class="drawer-summary-row">
+          <span>Toplam Seçilen Kalem</span>
+          <strong id="drawerTotalCount">0 Ürün</strong>
+        </div>
+        <button type="button" class="btn-primary-gold full-width" id="proceedToInquiryBtn">
+          <span>Seçkiyi Sipariş / Tadım Formuna Aktar</span>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="luxury-toast" id="luxuryToast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

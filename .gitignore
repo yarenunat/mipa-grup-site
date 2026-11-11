@@ -1,0 +1,7 @@
+*.zip
+verify_*.jpg
+contact_sheet_*.jpg
+logo_preview.jpg
+extracted_assets/
+.vercel
+.DS_Store
